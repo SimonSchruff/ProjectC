@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public float rotationSpeed = 20;
+    public float rotationSpeedX = 20;
+    public float rotationSpeedY = 20;
 
 
     void Update()
@@ -28,7 +29,13 @@ public class PlayerInput : MonoBehaviour
     {
 
         //Rotates Cube Parent
-        transform.Rotate(new Vector3(- Input.GetAxis("Mouse Y"), - Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotationSpeed);
+
+
+        float rotX = Input.GetAxis("Mouse X") * rotationSpeedX * Mathf.Deg2Rad;
+        float rotY = - Input.GetAxis("Mouse Y") * rotationSpeedY * Mathf.Deg2Rad;
+
+        transform.RotateAround(Vector3.up, -rotX);
+        transform.RotateAround(Vector3.right, rotY);
 
     }
 
