@@ -9,7 +9,15 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] private LayerMask clickableLayer;
 
-    private List<GameObject> selectedObjects = new List<GameObject>(); 
+    private List<GameObject> selectedObjects = new List<GameObject>();
+
+
+
+    // TO - DO:
+    //
+    // Deselection does not work
+    // Fix Rotation
+    //
 
 
     void Update()
@@ -34,12 +42,11 @@ public class PlayerInput : MonoBehaviour
 
         //Rotates Cube Parent
 
-        //rotation auf beiden Achsen für Prototyp erstmal auskommentiert
-        float rotX = Input.GetAxis("Mouse X") * rotationSpeedX * Mathf.Deg2Rad;
-        //float rotY = - Input.GetAxis("Mouse Y") * rotationSpeedY * Mathf.Deg2Rad;
+        float rotX = Input.GetAxis("Mouse X") * rotationSpeedX;
+        float rotY = - Input.GetAxis("Mouse Y") * rotationSpeedY;
 
-        transform.RotateAround(Vector3.up, -rotX);
-        //transform.RotateAround(Vector3.right, rotY);
+        transform.Rotate(rotY,-rotX,0,Space.World);
+        
 
     }
 
@@ -52,35 +59,39 @@ public class PlayerInput : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, clickableLayer))
         {
+            //Prevents Error msg in case no clickable object script is found
             if (hit.collider.GetComponent<ClickableObject>() != null)
             {
                 ClickableObject clickedObject = hit.collider.GetComponent<ClickableObject>();
-                selectedObjects.Add(hit.collider.gameObject);
 
-                if(selectedObjects.Count > 0)
+
+                //handles deselection of all other objects; 
+                if (selectedObjects.Count > 0)
                 {
                     foreach (GameObject obj in selectedObjects)
                     {
                         obj.GetComponent<ClickableObject>().currentlySelected = false;
-                        obj.GetComponent<ClickableObject>().OnClicked(); 
+                        obj.GetComponent<ClickableObject>().OnClicked();
                     }
 
-                    selectedObjects.Clear(); 
+                    selectedObjects.Clear();
+
                 }
+                
 
                 selectedObjects.Add(hit.collider.gameObject);
                 clickedObject.currentlySelected = true;
-                clickedObject.OnClicked(); 
-
-
-                 
-
+                clickedObject.OnClicked();
             }
-
+                    
+                
 
         }
-        else
-            return; 
+
+
+        
+        
+       
 
 
     }
