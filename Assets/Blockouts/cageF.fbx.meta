@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 50020bab90dba4067b203fe7352ce430
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -8412717499102621030
+    second: Cube.009|Cube.009Action
+  - first:
+      74: -73386028986762863
+    second: Cube.009|Cube.013Action
+  - first:
+      74: 2871946359184052906
+    second: Cube.009|TorusAction
+  - first:
+      74: 2014756826049036905
+    second: Cube.009|TorusAction.001
+  - first:
+      74: -3980070183499906879
+    second: Cube.009|TorusAction.002
+  - first:
+      74: -4642495238734873503
+    second: Cube.009|TorusAction.003
+  - first:
+      74: 6614578237119176762
+    second: Cube.013|Cube.009Action
+  - first:
+      74: 4287179037922127428
+    second: Cube.013|Cube.013Action
+  - first:
+      74: -1072154816431019585
+    second: Cube.013|TorusAction
+  - first:
+      74: -1324884043052851299
+    second: Cube.013|TorusAction.001
+  - first:
+      74: 2899665833585125877
+    second: Cube.013|TorusAction.002
+  - first:
+      74: 2698747264467496060
+    second: Cube.013|TorusAction.003
+  - first:
+      74: -8263345762249721030
+    second: Torus|Cube.009Action
+  - first:
+      74: 5183814634539117836
+    second: Torus|Cube.013Action
+  - first:
+      74: -8730468044713431094
+    second: Torus|TorusAction
+  - first:
+      74: 3426476258145927296
+    second: Torus|TorusAction.001
+  - first:
+      74: -4453159779754542692
+    second: Torus|TorusAction.002
+  - first:
+      74: 1037548291443601046
+    second: Torus|TorusAction.003
+  - first:
+      74: -5974296435850938935
+    second: Torus.001|Cube.009Action
+  - first:
+      74: -4429707832394600357
+    second: Torus.001|Cube.013Action
+  - first:
+      74: 4646315479830031230
+    second: Torus.001|TorusAction
+  - first:
+      74: -6682057689704736468
+    second: Torus.001|TorusAction.001
+  - first:
+      74: 4631202878862218411
+    second: Torus.001|TorusAction.002
+  - first:
+      74: 6069641014905539346
+    second: Torus.001|TorusAction.003
+  - first:
+      74: -4308373067385244811
+    second: Torus.002|Cube.009Action
+  - first:
+      74: 5407567510781675369
+    second: Torus.002|Cube.013Action
+  - first:
+      74: 2361917341488514430
+    second: Torus.002|TorusAction
+  - first:
+      74: 1531356653748290742
+    second: Torus.002|TorusAction.001
+  - first:
+      74: 6570194593816972284
+    second: Torus.002|TorusAction.002
+  - first:
+      74: -598566768489625770
+    second: Torus.002|TorusAction.003
+  - first:
+      74: 489715596195849541
+    second: Torus.003|Cube.009Action
+  - first:
+      74: 3562004217995513133
+    second: Torus.003|Cube.013Action
+  - first:
+      74: 6212757079092083684
+    second: Torus.003|TorusAction
+  - first:
+      74: 5290721384564272841
+    second: Torus.003|TorusAction.001
+  - first:
+      74: -997809159736479076
+    second: Torus.003|TorusAction.002
+  - first:
+      74: -3202578440595003616
+    second: Torus.003|TorusAction.003
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
