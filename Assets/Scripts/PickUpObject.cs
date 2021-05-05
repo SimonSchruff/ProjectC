@@ -5,19 +5,25 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour
 {
 
-    public bool currentlySelected; 
+    public bool currentlySelected;
+    public bool inTargetArea; 
 
     [Header("PickUp")]
-    public Vector3 originalPos;
     private Vector3 mouseOffset;
     private float mouseZCoord;
 
-    public Transform parentPos; 
+    public Transform originalPos;
+    public Transform targetPos; 
 
 
     public void Start()
     {
-        originalPos = transform.position; 
+        
+    }
+
+    private void Update()
+    {
+        
     }
 
 
@@ -44,13 +50,20 @@ public class PickUpObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-
+        
         transform.position = GetMouseWorldPos() + mouseOffset;
     }
     private void OnMouseUp()
     {
-
-        currentlySelected = false;
-        transform.position = parentPos.position; 
+        if(!inTargetArea)
+        {
+            currentlySelected = false;
+            transform.position = originalPos.position;
+        }
+        else
+        {
+            transform.position = targetPos.position; 
+        }
+        
     }
 }
