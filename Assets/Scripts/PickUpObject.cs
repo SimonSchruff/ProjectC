@@ -8,10 +8,11 @@ public class PickUpObject : MonoBehaviour
     public bool currentlySelected; 
 
     [Header("PickUp")]
-    Vector3 originalPos;
-    private bool isPickUp = false;
+    public Vector3 originalPos;
     private Vector3 mouseOffset;
     private float mouseZCoord;
+
+    public Transform parentPos; 
 
 
     public void Start()
@@ -20,11 +21,11 @@ public class PickUpObject : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
-        //Store offset = GameObject world pos - mouse world pos
+        //Save offset = GameObject world pos - mouse world pos
         mouseOffset = gameObject.transform.position - GetMouseWorldPos();
     }
 
@@ -44,12 +45,12 @@ public class PickUpObject : MonoBehaviour
     private void OnMouseDrag()
     {
 
-        transform.position = GetMouseWorldPos() + mouseOffset;
+        transform.position = GetMouseWorldPos() + mouseOffset + new Vector3(0,0,-1);
     }
     private void OnMouseUp()
     {
 
         currentlySelected = false;
-        transform.position = originalPos;
+        transform.position = parentPos.position; 
     }
 }

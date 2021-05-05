@@ -49,7 +49,7 @@ public class PlayerInput : MonoBehaviour
         //Rotates Cube Parent
 
         float rotX = Input.GetAxis("Mouse X") * rotationSpeedX;
-        float rotY = - Input.GetAxis("Mouse Y") * rotationSpeedY;
+        float rotY = Input.GetAxis("Mouse Y") * rotationSpeedY;
 
         transform.Rotate(rotY,-rotX,0,Space.World);
         
@@ -65,13 +65,15 @@ public class PlayerInput : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, clickableLayer))
         {
-            ////////     BUTTON OBJECTS   ///////
 
-            if (hit.collider.GetComponent<ClickableObject>() != null)
+            
+                /////// BUTTON OBJECTS ///////////
+            if (hit.collider.GetComponent<ButtonScript>() != null)
             {
-                ClickableObject clickedObject = hit.collider.GetComponent<ClickableObject>();
+                ButtonScript buttonObject = hit.collider.GetComponent<ButtonScript>();
 
-                if(clickedObject.currentlySelected == false)
+                
+                if (buttonObject.currentlySelected == false)
                 {
 
                     // handles deselection of all other objects;
@@ -79,8 +81,8 @@ public class PlayerInput : MonoBehaviour
                     {
                         foreach (GameObject obj in selectedObjects)
                         {
-                            obj.GetComponent<ClickableObject>().currentlySelected = false;
-                            obj.GetComponent<ClickableObject>().OnClicked();
+                            obj.GetComponent<ButtonScript>().currentlySelected = false;
+                            obj.GetComponent<ButtonScript>().OnClicked();
                         }
 
                         selectedObjects.Clear();
@@ -89,21 +91,21 @@ public class PlayerInput : MonoBehaviour
 
 
                     selectedObjects.Add(hit.collider.gameObject);
-                    clickedObject.currentlySelected = true;
-                    clickedObject.OnClicked();
+                    buttonObject.currentlySelected = true;
+                    buttonObject.OnClicked();
 
                 }
                 else
                 {
-                    Deselect(); 
+                    foreach (GameObject obj in selectedObjects)
+                    {
+                        obj.GetComponent<ButtonScript>().currentlySelected = false;
+                        obj.GetComponent<ButtonScript>().OnClicked();
+                    }
+
+                    selectedObjects.Clear();
                 }
-
                 
-            }
-            /////// PICK UP OBJECTS //////////
-            else if(hit.collider.GetComponent<PickUpObject>() != null)
-            {
-
             }
                     
                 

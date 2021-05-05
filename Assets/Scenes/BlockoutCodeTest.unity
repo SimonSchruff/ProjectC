@@ -220,11 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6516448144070231735, guid: 9e9fee766352a42f3a6b2546ad0eb8e8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8191521
+      value: 0.6087614
       objectReference: {fileID: 0}
     - target: {fileID: 6516448144070231735, guid: 9e9fee766352a42f3a6b2546ad0eb8e8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5735764
+      value: -0.7933534
       objectReference: {fileID: 0}
     - target: {fileID: 6516448144070231735, guid: 9e9fee766352a42f3a6b2546ad0eb8e8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6516448144070231735, guid: 9e9fee766352a42f3a6b2546ad0eb8e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -70
+      value: -105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9fee766352a42f3a6b2546ad0eb8e8, type: 3}
@@ -1071,12 +1071,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811024435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b7093c54b3c4ce8a967b9431389fd9, type: 3}
+  m_Script: {fileID: 11500000, guid: e99e808f3605d45769f6d38049ac679a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redMat: {fileID: 2100000, guid: 37d16f12f3ef64b48b8d94d0c2b28a10, type: 2}
-  whiteMat: {fileID: 2100000, guid: 438596911c02c459595ccf977dc9b3bb, type: 2}
   currentlySelected: 0
+  whiteMat: {fileID: 2100000, guid: 438596911c02c459595ccf977dc9b3bb, type: 2}
+  redMat: {fileID: 2100000, guid: 37d16f12f3ef64b48b8d94d0c2b28a10, type: 2}
 --- !u!64 &1811024440
 MeshCollider:
   m_ObjectHideFlags: 0
