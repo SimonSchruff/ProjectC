@@ -37,7 +37,7 @@ public class ButtonScript : MonoBehaviour
 
             if (CompareTag("Button01"))
             {
-                animator.SetTrigger("activate");
+                //animator.SetTrigger("activate");
             }
             else if (CompareTag("Button02"))
             {

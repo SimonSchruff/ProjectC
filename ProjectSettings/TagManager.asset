@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - mainCube
-  - Button
   - PickUp
+  - Button01
+  - Button02
   layers:
   - Default
   - TransparentFX
