@@ -45,7 +45,7 @@ public class PickUpObject : MonoBehaviour
     private void OnMouseDrag()
     {
 
-        transform.position = GetMouseWorldPos() + mouseOffset + new Vector3(0,0,-1);
+        transform.position = GetMouseWorldPos() + mouseOffset;
     }
     private void OnMouseUp()
     {

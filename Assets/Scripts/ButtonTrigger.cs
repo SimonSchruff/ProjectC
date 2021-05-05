@@ -10,13 +10,32 @@ public class ButtonTrigger : MonoBehaviour
     [SerializeField] Animator animator02;
 
     [Header("Colliders")]
-    [SerializeField] Collider refCollider; 
+    [SerializeField] Collider refCollider;
 
 
+    public bool currentlyActivated = false;
+
+    
     private void OnMouseDown()
     {
+        
+
         if(animator != null)
-            animator.SetTrigger("activate");
+        {
+            if (currentlyActivated == false)
+            {
+                currentlyActivated = true; 
+                animator.SetTrigger("activate");
+
+            }
+            else
+            {
+                currentlyActivated = false; 
+                animator.SetTrigger("deactivate");
+
+            }
+        }
+         
 
         if (animator01 != null)
             animator01.SetTrigger("activate");
