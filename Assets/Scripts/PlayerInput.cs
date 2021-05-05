@@ -18,8 +18,6 @@ public class PlayerInput : MonoBehaviour
 
 
     // TO - DO:
-    //
-    // Deselection does not work
     // Fix Rotation
     //
 
@@ -67,29 +65,45 @@ public class PlayerInput : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, clickableLayer))
         {
-            //Prevents Error msg in case no clickable object script is found
+            ////////     BUTTON OBJECTS   ///////
+
             if (hit.collider.GetComponent<ClickableObject>() != null)
             {
                 ClickableObject clickedObject = hit.collider.GetComponent<ClickableObject>();
 
-
-                //handles deselection of all other objects; 
-                if (selectedObjects.Count > 0)
+                if(clickedObject.currentlySelected == false)
                 {
-                    foreach (GameObject obj in selectedObjects)
+
+                    // handles deselection of all other objects;
+                    if (selectedObjects.Count > 0)
                     {
-                        obj.GetComponent<ClickableObject>().currentlySelected = false;
-                        obj.GetComponent<ClickableObject>().OnClicked();
+                        foreach (GameObject obj in selectedObjects)
+                        {
+                            obj.GetComponent<ClickableObject>().currentlySelected = false;
+                            obj.GetComponent<ClickableObject>().OnClicked();
+                        }
+
+                        selectedObjects.Clear();
+
                     }
 
-                    selectedObjects.Clear();
+
+                    selectedObjects.Add(hit.collider.gameObject);
+                    clickedObject.currentlySelected = true;
+                    clickedObject.OnClicked();
 
                 }
-                
+                else
+                {
+                    Deselect(); 
+                }
 
-                selectedObjects.Add(hit.collider.gameObject);
-                clickedObject.currentlySelected = true;
-                clickedObject.OnClicked();
+                
+            }
+            /////// PICK UP OBJECTS //////////
+            else if(hit.collider.GetComponent<PickUpObject>() != null)
+            {
+
             }
                     
                 

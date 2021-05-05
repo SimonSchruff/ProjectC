@@ -91,11 +91,13 @@ public class ClickableObject : MonoBehaviour
 
         transform.position = GetMouseWorldPos() + mouseOffset; 
     }
-    private void OnMouseExit()
+    private void OnMouseUp()
     {
         if (!isPickUp)
             return;
 
+        currentlySelected = false; 
         transform.position = originalPos; 
     }
+    
 }
