@@ -12,6 +12,10 @@ public class PlayerInput : MonoBehaviour
     private List<GameObject> selectedObjects = new List<GameObject>();
 
 
+    [Header("Key Bindings")]
+    public KeyCode deselectKey = KeyCode.Escape; 
+
+
 
     // TO - DO:
     //
@@ -32,6 +36,10 @@ public class PlayerInput : MonoBehaviour
         else if(Input.GetMouseButtonDown(0))
         {
             onLeftClick(); 
+        }
+        else if(Input.GetKeyDown(deselectKey))
+        {
+            Deselect(); 
         }
     }
 
@@ -89,10 +97,18 @@ public class PlayerInput : MonoBehaviour
         }
 
 
-        
-        
-       
-
-
+        //End left Click
     }
+
+    void Deselect()
+    {
+        foreach(GameObject obj in selectedObjects)
+        {
+            obj.GetComponent<ClickableObject>().currentlySelected = false;
+            obj.GetComponent<ClickableObject>().OnClicked();
+        }
+
+        selectedObjects.Clear();
+    }
+
 }
