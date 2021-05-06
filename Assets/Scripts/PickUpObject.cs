@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
-
+    [Header("Public Bools")]
     public bool currentlySelected;
     public bool inTargetArea; 
 
-    [Header("PickUp")]
+    //Mouse pos calculations
     private Vector3 mouseOffset;
     private float mouseZCoord;
 
+
+    [Header("Original and Target Transforms")]
     public Transform originalPos;
     public Transform targetPos; 
-
-
-    public void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
 
 
     public void OnMouseDown()
@@ -53,6 +44,8 @@ public class PickUpObject : MonoBehaviour
         
         transform.position = GetMouseWorldPos() + mouseOffset;
     }
+
+
     private void OnMouseUp()
     {
         if(!inTargetArea)
