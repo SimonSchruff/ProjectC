@@ -18,6 +18,10 @@ public class DragObject : MonoBehaviour
     public float minBounds; 
 
 
+
+    CubeRotation cubeRotation; 
+
+
     //TO-Do:
     //Clamp up and down movement
     //What to do when mouse button is released?
@@ -25,7 +29,7 @@ public class DragObject : MonoBehaviour
 
     private void Start()
     {
-
+        cubeRotation = FindObjectOfType<CubeRotation>(); 
     }
 
 
@@ -61,6 +65,7 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        cubeRotation.isDisabled = true; 
         //Clamp Y MovementVector to max/min Bounds; 
         Vector3 moveVectorClamped = new Vector3(GetMovementVector().x,Mathf.Clamp(GetMovementVector().y,minBounds, maxBounds),GetMovementVector().z);  
         parentObject.transform.position = moveVectorClamped; 
@@ -69,6 +74,7 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseUp()
     {
+        cubeRotation.isDisabled = false; 
         parentObject.transform.position = originalPos; 
     }
 }
