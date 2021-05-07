@@ -6,12 +6,16 @@ public class DragObject : MonoBehaviour
 {
     public GameObject parentObject;
     private float mouseZCoord;
-    private Vector3 movementVector;
-    public Vector3 currentPos; 
+    
 
-    [Header("Positions")]
+    [Header("Bounds")]
     Vector3 originalPos;
+
+    [Tooltip("Max/Min Bounds according to resulting movementVector.y of mouse position")]
+    public Vector3 movementVector;
+
     public float maxBounds;
+    public float minBounds; 
 
 
     //TO-Do:
@@ -25,17 +29,11 @@ public class DragObject : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        currentPos = parentObject.transform.position;
-        
-    }
-
     public void OnMouseDown()
     {
         mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
-        //saves original pos of gameObject parent for movement Vector; 
+        //saves original pos of gameObject parent for movement Vector on mouse click; 
         originalPos = parentObject.transform.position;
 
     }
@@ -63,21 +61,14 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        //Object moves out of bounds and is not able to move after
-        //if (currentPos.y >= -.27)
-        {
-            //if (currentPos.y <= -.18)
-            {
-                //Debug.Log("CanMove");
-                parentObject.transform.position = GetMovementVector();
-            }
-
-        }
-        
+        //Clamp Y MovementVector to max/min Bounds; 
+        Vector3 moveVectorClamped = new Vector3(GetMovementVector().x,Mathf.Clamp(GetMovementVector().y,minBounds, maxBounds),GetMovementVector().z);  
+        parentObject.transform.position = moveVectorClamped; 
+    
     }
 
     private void OnMouseUp()
     {
-        //go back to original pos?
+        parentObject.transform.position = originalPos; 
     }
 }
