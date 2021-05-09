@@ -33,12 +33,16 @@ public class ButtonTrigger : MonoBehaviour
             if (currentlyActivated == false)
             {
                 currentlyActivated = true; 
+
+                
                 animator.SetTrigger("activate");
 
             }
             else
             {
                 currentlyActivated = false; 
+
+                
                 animator.SetTrigger("deactivate");
 
             }
