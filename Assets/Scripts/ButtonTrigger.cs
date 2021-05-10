@@ -11,14 +11,15 @@ public class ButtonTrigger : MonoBehaviour
 
     private Animator ownAnimator;
 
-    [Tooltip("Only External Animators need to be referenced!")] 
+    //Only external Animators need to be put into Inspector
     public Animator[] otherAnimators; 
     
 
-    [Tooltip("Ref colliders will be enabled/disabled on activation;")]
     [Header("Colliders")]
-    [SerializeField] Collider refCollider;
-    [SerializeField] Collider refCollider01;
+
+
+    public Collider[] colliders; 
+    
 
     [Header("Currently Activated")]
     public bool currentlyActivated = false;
@@ -37,6 +38,7 @@ public class ButtonTrigger : MonoBehaviour
     
     private void OnMouseDown()
     {
+        //Sets own Animator and currentlyActivated
         if (currentlyActivated == false)
             {
                 currentlyActivated = true; 
@@ -50,6 +52,11 @@ public class ButtonTrigger : MonoBehaviour
                 ownAnimator.SetTrigger("deactivate");
             } 
 
+
+        //Sets Trigger for external Animators
+        //
+        ///////////     All Animators NEED Trigger "activate" AND "deactivate" even if unused   //////////
+        //
         foreach(Animator a in otherAnimators)
         {
             if (currentlyActivated == true)
@@ -63,12 +70,19 @@ public class ButtonTrigger : MonoBehaviour
             }
         }
         
-            
-        //Ref Colliders
-        if(refCollider != null)
-            refCollider.enabled = true;
-        if (refCollider01 != null)
-            refCollider01.enabled = true;
+        //Enables or Disabled referenced Colliders
+        foreach(Collider c in colliders)
+        {
+            if(c.enabled == false)
+            {
+                c.enabled = true; 
+            }
+            else
+            {
+                c.enabled = false; 
+            }
+        }    
+       
     }
 
     

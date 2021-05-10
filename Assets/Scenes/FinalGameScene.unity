@@ -146,12 +146,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572059}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 61.02, y: 4.25, z: -83.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1482730423}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108363897
 GameObject:
@@ -162,6 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108363898}
+  - component: {fileID: 108363899}
   m_Layer: 0
   m_Name: -- Switches
   m_TagString: Untagged
@@ -187,6 +188,22 @@ Transform:
   m_Father: {fileID: 2091043566}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108363899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108363897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f140de8ce88074104b6b91311f2c677d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Switch00: {fileID: 919132147667344220}
+  Switch01: {fileID: 864817871}
+  Switch02: {fileID: 335384060}
+  Switch03: {fileID: 390705660}
 --- !u!1 &124133273
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,8 +321,7 @@ MonoBehaviour:
   otherAnimators:
   - {fileID: 919132148071166693}
   - {fileID: 919132148790649675}
-  refCollider: {fileID: 0}
-  refCollider01: {fileID: 0}
+  colliders: []
   currentlyActivated: 0
 --- !u!65 &335384061
 BoxCollider:
@@ -438,8 +454,7 @@ MonoBehaviour:
   otherAnimators:
   - {fileID: 919132147979466949}
   - {fileID: 919132148182999040}
-  refCollider: {fileID: 0}
-  refCollider01: {fileID: 0}
+  colliders: []
   currentlyActivated: 0
 --- !u!65 &390705661
 BoxCollider:
@@ -610,12 +625,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664552181}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 68.93, y: -2.9, z: -81.13}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1482730423}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &787701975
 GameObject:
@@ -780,8 +795,7 @@ MonoBehaviour:
   - {fileID: 919132147594404464}
   - {fileID: 919132149069935506}
   - {fileID: 919132149159731847}
-  refCollider: {fileID: 0}
-  refCollider01: {fileID: 0}
+  colliders: []
   currentlyActivated: 0
 --- !u!65 &864817872
 BoxCollider:
@@ -1152,12 +1166,47 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463236420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 61.02, y: -2.45, z: -83.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 1482730423}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1482730422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482730423}
+  m_Layer: 0
+  m_Name: ---- Maze Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1482730423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482730422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 664552186}
+  - {fileID: 1463236421}
+  - {fileID: 1835432046}
+  - {fileID: 5572060}
+  - {fileID: 1601761780}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488894184
 GameObject:
@@ -1311,15 +1360,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601761779}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.382496, y: 0.94911003, z: -60.198334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6867390191956367508}
   - {fileID: 1488894185}
   - {fileID: 1694185377}
-  m_Father: {fileID: 2136904067}
-  m_RootOrder: 0
+  m_Father: {fileID: 1482730423}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694185376
 GameObject:
@@ -1402,12 +1451,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835432045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 68.34, y: -2.45, z: -83.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1482730423}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091043565
 GameObject:
@@ -1479,8 +1528,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.382496, y: 0.94911003, z: -60.198334}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1601761780}
+  m_Children: []
   m_Father: {fileID: 124133275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1885,8 +1933,7 @@ MonoBehaviour:
   otherAnimators:
   - {fileID: 919132147679353604}
   - {fileID: 919132148091104586}
-  refCollider: {fileID: 0}
-  refCollider01: {fileID: 0}
+  colliders: []
   currentlyActivated: 0
 --- !u!65 &919132147667344221
 BoxCollider:
@@ -2005,8 +2052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherAnimators: []
-  refCollider: {fileID: 919132149070898343}
-  refCollider01: {fileID: 0}
+  colliders:
+  - {fileID: 919132149070898343}
   currentlyActivated: 0
 --- !u!1 &919132147924832376
 GameObject:
@@ -2485,8 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherAnimators:
   - {fileID: 919132148805402948}
-  refCollider: {fileID: 0}
-  refCollider01: {fileID: 0}
+  colliders: []
   currentlyActivated: 0
 --- !u!1 &919132149089669502
 GameObject:
