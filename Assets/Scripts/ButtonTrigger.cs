@@ -6,11 +6,14 @@ public class ButtonTrigger : MonoBehaviour
 {
     
 
-    [Tooltip("Animators need activate/deactivate Trigger; Animator 00 Refers to clicked object;")]
+    
     [Header("Animators")]
-    [SerializeField] Animator animator;
-    [SerializeField] Animator animator01;
-    [SerializeField] Animator animator02;
+
+    private Animator ownAnimator;
+
+    [Tooltip("Only External Animators need to be referenced!")] 
+    public Animator[] otherAnimators; 
+    
 
     [Tooltip("Ref colliders will be enabled/disabled on activation;")]
     [Header("Colliders")]
@@ -21,42 +24,46 @@ public class ButtonTrigger : MonoBehaviour
     public bool currentlyActivated = false;
 
 
+    
+    void Start()
+    {
+        if(GetComponent<Animator>() != null)
+        {
+            ownAnimator = GetComponent<Animator>(); 
+        }
+    }
 
 
     
     private void OnMouseDown()
     {
-        
-        //Animators
-        if(animator != null)
-        {
-            if (currentlyActivated == false)
+        if (currentlyActivated == false)
             {
                 currentlyActivated = true; 
 
-                
-                animator.SetTrigger("activate");
-
+                ownAnimator.SetTrigger("activate");
             }
             else
             {
                 currentlyActivated = false; 
 
-                
-                animator.SetTrigger("deactivate");
+                ownAnimator.SetTrigger("deactivate");
+            } 
 
+        foreach(Animator a in otherAnimators)
+        {
+            if (currentlyActivated == true)
+            {
+                a.SetTrigger("activate");
+            }
+            else
+            {
+               
+                a.SetTrigger("deactivate");
             }
         }
-         
-
-        if (animator01 != null)
-            animator01.SetTrigger("activate");
-
-        if (animator02 != null)
-            animator02.SetTrigger("activate");
-
-
-
+        
+            
         //Ref Colliders
         if(refCollider != null)
             refCollider.enabled = true;

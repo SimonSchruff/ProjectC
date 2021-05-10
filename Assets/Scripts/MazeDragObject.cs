@@ -5,19 +5,21 @@ using UnityEngine;
 public class MazeDragObject : MonoBehaviour
 {
     //Pushable Refers to pushable Objects in maze
-    
+    [SerializeField] Collider moveableCollider; 
 
     private float mouseZCoord; 
+    public bool canMove; 
 
 
     private Vector3 originalPos; 
     public Vector3 movementVector; 
 
-    CubeRotation cubeRotation; 
+    //CubeRotation cubeRotation; 
 
     void Start()
     {
-        cubeRotation = FindObjectOfType<CubeRotation>(); 
+        canMove = false; 
+        //cubeRotation = FindObjectOfType<CubeRotation>(); 
     }
 
     
@@ -43,7 +45,9 @@ public class MazeDragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        
+        if(canMove == false)
+            return; 
+
         gameObject.transform.position = GetMouseWorldPos(); 
     }
 }
