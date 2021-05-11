@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1480.2295, g: 1833.8652, b: 2428.0332, a: 1}
+  m_IndirectSpecularColor: {r: 1250.0902, g: 1597.8608, b: 2177.6772, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -377,10 +377,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -6536947042011271686, guid: 361ffb6d0b0994bab909947a8f4efdc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63351a63613544533b14ac19d361c722, type: 2}
+    - target: {fileID: -3349895831572430717, guid: 361ffb6d0b0994bab909947a8f4efdc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63351a63613544533b14ac19d361c722, type: 2}
     - target: {fileID: 919132149155446097, guid: 361ffb6d0b0994bab909947a8f4efdc1, type: 3}
       propertyPath: m_Name
       value: Monika
       objectReference: {fileID: 0}
+    - target: {fileID: 6987383555187393296, guid: 361ffb6d0b0994bab909947a8f4efdc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63351a63613544533b14ac19d361c722, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 361ffb6d0b0994bab909947a8f4efdc1, type: 3}
 --- !u!4 &164415384 stripped
@@ -2743,6 +2755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5789183838317300567, guid: 8add6fe17c27d499daebe731728f276e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4865266976ba54d4c9f5fe991d406e72, type: 2}
     - target: {fileID: 919132149155446097, guid: 8add6fe17c27d499daebe731728f276e, type: 3}
       propertyPath: m_Name
       value: Maze_low 1
