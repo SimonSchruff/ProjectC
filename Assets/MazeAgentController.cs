@@ -9,25 +9,13 @@ public class MazeAgentController : MonoBehaviour
 
     private Vector3 destination; 
 
-    //TO DO 
-    //
-    //On Mouse Click
-    // -> NavMeshAgent anschalten
-    //
-    //OnMouseDrag
-    //SetDestination(Input.mouseposition)
+    private CubeRotation cubeRotation;
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); 
+        //agent = GetComponent<NavMeshAgent>(); 
+        //cubeRotation = FindObjectOfType<CubeRotation>(); 
         
     }
-
-    void Update()
-    {
-        
-    }
-
-    
     void OnMouseDown()
     {
         Debug.Log("Clicked"); 
@@ -38,18 +26,25 @@ public class MazeAgentController : MonoBehaviour
     void OnMouseUp()
     {
         agent.enabled = false;
+        //cubeRotation.isDisabled = false; 
     }
 
  
     void OnMouseDrag()
     {
-        agent.enabled = true; 
 
+
+        agent.enabled = true; 
+        //cubeRotation.isDisabled = true; 
+
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
         RaycastHit hit; 
 
         if(Physics.Raycast(ray, out hit))
         {
+            //Debug.Log("MouseDrag"); 
+
             agent.SetDestination(hit.point); 
         }
         
