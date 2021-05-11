@@ -627,12 +627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf505476228c46a292e1399afa56bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1463236420}
-  - {fileID: 1835432045}
-  - {fileID: 5572059}
-  movementVector: {x: 0, y: 0, z: 0}
-  speed: 10
 --- !u!65 &664552183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -769,7 +763,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: df975f6c4479f446787ab3d7bc4ecb69, type: 2}
 --- !u!1 &779817867
@@ -1872,9 +1866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5674f6a6c5cb74029a02b348b5231f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveableCollider: {fileID: 1694185379}
-  canMove: 0
-  movementVector: {x: 0, y: 0, z: 0}
 --- !u!1 &1571451123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae4acf7cfe1b48c8bd38a3697c8d58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragObject: {fileID: 1488894190}
 --- !u!65 &1694185379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2120,7 +2110,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: -1372625422
   m_Radius: 0.5000174
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
