@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneWayButtonTrigger : MonoBehaviour
+public class Zahlenrad : MonoBehaviour
 {
     
-     
+    public GameObject ZahlenradObject; 
     
     [Header("Animators")]
 
@@ -25,10 +25,6 @@ public class OneWayButtonTrigger : MonoBehaviour
     public bool currentlyActivated = false;
     public float timeBeforeInactive;
     private float currentTime; 
-
-    [Header("Level04")]
-    public GameObject turnObject ;
-    public int turnAmount;
 
 
     
@@ -68,13 +64,8 @@ public class OneWayButtonTrigger : MonoBehaviour
         if(ownAnimator != null)
             ownAnimator.SetTrigger("activate");
 
-
-
-        //Level04 Zahnrad
-        if(CompareTag("ButtonLv4"))
-        {
-            Level04Zahnrad(); 
-        }
+        transform.Rotate(new Vector3(0, 30 ,0), Space.Self); 
+        ZahlenradObject.transform.Rotate(new Vector3(0, 120,0), Space.Self); 
             
            
         SetExternalAnimators(); 
@@ -119,11 +110,6 @@ public class OneWayButtonTrigger : MonoBehaviour
                 c.enabled = false; 
             }
         }    
-    }
-
-    void Level04Zahnrad()
-    {
-        turnObject.transform.Rotate(new Vector3(0,turnAmount,0), Space.Self); 
     }
 
     

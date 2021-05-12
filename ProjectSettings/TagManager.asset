@@ -9,6 +9,7 @@ TagManager:
   - Button01
   - Button02
   - PickUp01
+  - ButtonLv4
   layers:
   - Default
   - TransparentFX
