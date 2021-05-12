@@ -7,35 +7,32 @@ public class MazeAgentController : MonoBehaviour
 {
     public NavMeshAgent agent; 
 
-    private Vector3 destination; 
+    public Vector3 destination; 
+    private Vector3 targetRadius; 
 
     private CubeRotation cubeRotation;
     void Start()
     {
         //agent = GetComponent<NavMeshAgent>(); 
-        //cubeRotation = FindObjectOfType<CubeRotation>(); 
+        cubeRotation = FindObjectOfType<CubeRotation>(); 
         
     }
-    void OnMouseDown()
+    void OnMouseDownUp()
     {
-        Debug.Log("Clicked"); 
+        cubeRotation.isDisabled = false; 
+        agent.enabled = false; 
 
     }
     
     
-    void OnMouseUp()
-    {
-        agent.enabled = false;
-        //cubeRotation.isDisabled = false; 
-    }
-
+    
  
     void OnMouseDrag()
     {
 
 
         agent.enabled = true; 
-        //cubeRotation.isDisabled = true; 
+        cubeRotation.isDisabled = true; 
 
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
@@ -48,5 +45,6 @@ public class MazeAgentController : MonoBehaviour
             agent.SetDestination(hit.point); 
         }
         
+       
     }
 }

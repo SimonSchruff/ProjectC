@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DragObject : MonoBehaviour
 {
+    public int targetPumpValue; 
+    public int currentPumpValue; 
+
+    public bool reachedTop; 
+
     public GameObject parentObject;
     private float mouseZCoord;
     
@@ -22,13 +27,11 @@ public class DragObject : MonoBehaviour
     CubeRotation cubeRotation; 
 
 
-    //TO-Do:
-    //Clamp up and down movement
-    //What to do when mouse button is released?
 
 
     private void Start()
     {
+        reachedTop = false; 
         cubeRotation = FindObjectOfType<CubeRotation>(); 
     }
 
@@ -65,16 +68,43 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        //disabled rotation of parent cube
         cubeRotation.isDisabled = true; 
+
+        //Counts pumps
+        CountPumps(); 
+       
         //Clamp Y MovementVector to max/min Bounds; 
         Vector3 moveVectorClamped = new Vector3(GetMovementVector().x,Mathf.Clamp(GetMovementVector().y,originalPos.y - minBounds, originalPos.y + maxBounds),GetMovementVector().z);  
         parentObject.transform.position = moveVectorClamped; 
     
     }
 
+    private void CountPumps()
+    {
+        //if bot reached; count++
+        //Until top is reached not possible to count 
+
+        if(parentObject.transform.position.y < -28 && reachedTop == true)
+        {
+            currentPumpValue++;
+            reachedTop = false;  
+        }
+        else if(parentObject.transform.position.y > -26)
+        {
+            reachedTop = true; 
+        }
+        else if(currentPumpValue >= targetPumpValue)
+        {
+            Debug.Log("TargetPumpValue Reached"); 
+        }
+    }
+
     private void OnMouseUp()
     {
-        cubeRotation.isDisabled = false; 
+        cubeRotation.isDisabled = false;
+        currentPumpValue = 0; 
+         
         parentObject.transform.position = originalPos; 
     }
 }
