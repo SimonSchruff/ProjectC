@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6426efe29b7f493db87ad7009e5ce4e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f030f60fdeb1cd8449ad351386511691, type: 2}
     - target: {fileID: 919132149155446097, guid: a6426efe29b7f493db87ad7009e5ce4e, type: 3}
       propertyPath: m_Name
       value: Connector_low
@@ -1415,16 +1419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf505476228c46a292e1399afa56bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1463236420}
-  - {fileID: 1835432045}
-  - {fileID: 5572059}
-  current: 1
-  mouseZCoord: 0
-  originalPos: {x: 0, y: 0, z: 0}
-  movementVector: {x: 0, y: 0, z: 0}
-  speed: 10
-  WPRadius: 0.5
 --- !u!65 &664552183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2940,6 +2934,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a76c60f66ab2241858204de6b036eead, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bdeea0fbdaeb3d34aa8bc48ca7ecb86d, type: 2}
     - target: {fileID: 919132149155446097, guid: a76c60f66ab2241858204de6b036eead, type: 3}
       propertyPath: m_Name
       value: Base_low
@@ -3396,11 +3394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5674f6a6c5cb74029a02b348b5231f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveableCollider: {fileID: 1694185379}
-  mouseZCoord: 0
-  canMove: 0
-  originalPos: {x: 0, y: 0, z: 0}
-  movementVector: {x: 0, y: 0, z: 0}
 --- !u!4 &1552913334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0525936f8e53a4081a4c8f7c66c53c20, type: 3}
@@ -3538,6 +3531,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bb85e7637f2ed4b14b05d4afbc89b1fa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 623c08311920728459df984a8832ed4e, type: 2}
     - target: {fileID: 919132149155446097, guid: bb85e7637f2ed4b14b05d4afbc89b1fa, type: 3}
       propertyPath: m_Name
       value: Engine_low
@@ -3588,7 +3585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae4acf7cfe1b48c8bd38a3697c8d58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragObject: {fileID: 1488894190}
 --- !u!65 &1694185379
 BoxCollider:
   m_ObjectHideFlags: 0
