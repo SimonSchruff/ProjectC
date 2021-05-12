@@ -9,9 +9,16 @@ public class WoodPlateDrag : MonoBehaviour
     
 
     [Header("Bounds")]
-    Vector3 originalPos;
+    private Vector3 originalPos;
 
-    [Tooltip("Max/Min Bounds according to resulting movementVector.y of mouse position")]
+    public Vector3 currentPos; 
+    public Vector3 targetPos; 
+    private float targetRadius; 
+
+    public bool isSolved; 
+
+
+
     public Vector3 movementVector;
 
     public float maxBounds;
@@ -22,23 +29,23 @@ public class WoodPlateDrag : MonoBehaviour
     CubeRotation cubeRotation; 
 
 
-    //TO-Do:
-    //Clamp up and down movement
-    //What to do when mouse button is released?
-
 
     private void Start()
     {
         cubeRotation = FindObjectOfType<CubeRotation>(); 
     }
 
+    private void Update()
+    {
+        
+    }
 
     public void OnMouseDown()
     {
         mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
         //saves original pos of gameObject parent for movement Vector on mouse click; 
-        originalPos = parentObject.transform.position;
+        originalPos = transform.position;
 
     }
 
@@ -57,7 +64,7 @@ public class WoodPlateDrag : MonoBehaviour
 
     private Vector3 GetMovementVector()
     {
-        movementVector = new Vector3(originalPos.x, GetMouseWorldPos().y, originalPos.z);
+        movementVector = new Vector3(GetMouseWorldPos().x, originalPos.y, originalPos.z);
         return movementVector; 
     }
 
@@ -67,14 +74,14 @@ public class WoodPlateDrag : MonoBehaviour
     {
         cubeRotation.isDisabled = true; 
         //Clamp Y MovementVector to max/min Bounds; 
-        Vector3 moveVectorClamped = new Vector3(GetMovementVector().x,Mathf.Clamp(GetMovementVector().y,originalPos.y - minBounds, originalPos.y + maxBounds),GetMovementVector().z);  
-        parentObject.transform.position = moveVectorClamped; 
+        Vector3 moveVectorClamped = new Vector3(Mathf.Clamp(GetMovementVector().x,originalPos.y - minBounds, originalPos.y + maxBounds),GetMovementVector().y,GetMovementVector().z);  
+        transform.position = moveVectorClamped; 
     
     }
 
     private void OnMouseUp()
     {
         cubeRotation.isDisabled = false; 
-        parentObject.transform.position = originalPos; 
+        //transform.position = originalPos; 
     }
 }
