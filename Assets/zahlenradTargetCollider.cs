@@ -7,8 +7,6 @@ public class zahlenradTargetCollider : MonoBehaviour
 
     public GameObject compareGO;
 
-    
-
     public bool correctPos; 
    
     void OnTriggerEnter(Collider c)
@@ -16,6 +14,14 @@ public class zahlenradTargetCollider : MonoBehaviour
         if(c.gameObject == compareGO)
         {
             correctPos = true ;
+        }
+    }
+    
+    void OnTriggerExit(Collider c)
+    {
+         if(c.gameObject == compareGO)
+        {
+            correctPos = false ;
         }
     }
 }
