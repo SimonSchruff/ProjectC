@@ -937,8 +937,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObject: {fileID: 919132149414448797}
   movementVector: {x: 0, y: 0, z: 0}
-  maxBounds: -23
-  minBounds: -29
+  maxBounds: 4
+  minBounds: 0.2
 --- !u!65 &450923167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4649,7 +4649,7 @@ GameObject:
   - component: {fileID: 3469287837332020098}
   - component: {fileID: 1711813855418707784}
   m_Layer: 0
-  m_Name: Pressurepump-Pusher_low
+  m_Name: -- Pressurepump-Pusher_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
