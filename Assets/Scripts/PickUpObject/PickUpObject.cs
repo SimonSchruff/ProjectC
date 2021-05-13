@@ -23,6 +23,8 @@ public class PickUpObject : MonoBehaviour
     public GameObject[] gameObjects;
     public Animator animator; 
 
+    
+
 
     public void OnMouseDown()
     {

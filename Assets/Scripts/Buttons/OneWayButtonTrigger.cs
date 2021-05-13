@@ -30,6 +30,8 @@ public class OneWayButtonTrigger : MonoBehaviour
 
     [Header("Level02")]
     public GameObject lamp; 
+    public GameObject[] lights; 
+
 
     [Header("Level04")]
     public GameObject turnObject ;
@@ -163,6 +165,18 @@ public class OneWayButtonTrigger : MonoBehaviour
         {
             a.SetTrigger("activate"); 
         }
+
+        foreach(GameObject go in lights)
+            {
+                if(go.activeInHierarchy == false)
+                {
+                    go.SetActive(true);  
+                }
+                else
+                {
+                    go.SetActive(false); 
+                }
+            }  
 
         lamp.SetActive(true); 
     }

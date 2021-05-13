@@ -6,17 +6,17 @@ public class reihenfolgeButtonCheck : MonoBehaviour
 {
     public OneWayButtonTrigger[] buttons = new OneWayButtonTrigger[2]; 
 
+    public GameObject[] lamps; 
+
+    
+
     public bool buttonOnePressed; 
     public bool buttonTwoPressed; 
 
     public bool isSolved; 
 
 
-    void Start()
-    {
-        
-    }
-
+    
     void Update()
     {
         //IS button 0 active or not
@@ -57,10 +57,45 @@ public class reihenfolgeButtonCheck : MonoBehaviour
                 }
                 
             }
-        }   
-    }
+        }
+
         
 
+        if(isSolved)
+            lampCycle();  
+
+       
+
+        
+
+
+    }
+        
+    void lampCycle()
+    {
+        lamps[0].SetActive(true); 
+        lamps[1].SetActive(false); 
+        lamps[2].SetActive(false); 
+
+        StartCoroutine(waitForTwoSeconds()); 
+
+        lamps[0].SetActive(false); 
+        lamps[1].SetActive(false); 
+        lamps[2].SetActive(true);
+
+        StartCoroutine(waitForTwoSeconds()); 
+
+        lamps[0].SetActive(false); 
+        lamps[1].SetActive(true); 
+        lamps[2].SetActive(false);
+
+        StartCoroutine(waitForTwoSeconds()); 
+    }
+
+    IEnumerator waitForTwoSeconds()
+    {
+        yield return new WaitForSeconds(2); 
+    }
     
 
 
