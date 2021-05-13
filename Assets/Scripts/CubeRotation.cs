@@ -65,7 +65,7 @@ public class CubeRotation : MonoBehaviour
         if(mouseDeltaX > mouseDeltaY)
         {
             rotX = Input.GetAxis("Mouse X") * rotationSpeedX;
-            transform.Rotate(0,-rotX,0,Space.Self);
+            transform.Rotate(0,-rotX,0,Space.World);
         }
         else 
         {
