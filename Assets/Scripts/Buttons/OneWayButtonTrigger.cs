@@ -31,6 +31,10 @@ public class OneWayButtonTrigger : MonoBehaviour
     public int turnAmount;
 
 
+    public float lv4Timer; 
+    public bool lv4OnClick; 
+
+
     
     void Start()
     {
@@ -52,6 +56,13 @@ public class OneWayButtonTrigger : MonoBehaviour
         
         if(currentTime == 0)
             currentlyActivated = false; 
+
+
+
+        if(lv4Timer > 0 && lv4OnClick == true)
+        {
+            lv4Timer -= Time.deltaTime; 
+        }    
         
     }
 
@@ -125,20 +136,36 @@ public class OneWayButtonTrigger : MonoBehaviour
         }    
     }
 
+   
+
     void Level04Zahnrad()
     {
-        turnObject.transform.Rotate(new Vector3(0,turnAmount,0), Space.Self); 
+        StartCoroutine(Countdown()); 
+
+        //turnObject.transform.Rotate(new Vector3(0,turnAmount,0), Space.Self); 
+           
+
     }
 
     void Level02Zahnrad()
     {
+
+
         foreach(Animator a in otherAnimators)
         {
             a.SetTrigger("activate"); 
         }
     }
        
+    private IEnumerator Countdown()
+    {
+        Debug.Log("countdown"); 
+        
+        yield return new WaitForSeconds(1); 
 
+        turnObject.transform.Rotate(new Vector3(0,turnAmount,0), Space.Self);
+        
+    }
     
 
 }

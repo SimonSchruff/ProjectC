@@ -6,9 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager instance ;
+
     public KeyCode QuitKey = KeyCode.Escape; 
     public KeyCode RelaodKey = KeyCode.R; 
 
+    void Awake()
+    {
+        //singleton
+        if(instance == null )
+            instance = this; 
+        else
+            Destroy(gameObject); 
+    
+    }
 
     void Update()
     {
