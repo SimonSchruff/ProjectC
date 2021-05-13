@@ -18,6 +18,9 @@ public class PickUpObject : MonoBehaviour
     public Transform targetPos; 
 
 
+    public Animator animator; 
+
+
     public void OnMouseDown()
     {
         mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -56,6 +59,9 @@ public class PickUpObject : MonoBehaviour
         else
         {
             transform.position = targetPos.position; 
+
+            if(animator != null)
+                animator.SetTrigger("activate"); 
         }
         
     }
