@@ -26,7 +26,8 @@ public class PickUpTarget : MonoBehaviour
         if(c.gameObject.GetComponent<PickUpObject>() != null )
         {
             item.GetComponent<PickUpObject>().inTargetArea = false; 
-            targetIndicator.SetActive(false); 
+            if(targetIndicator != null) 
+                targetIndicator.SetActive(false); 
         }
     }
 
@@ -37,7 +38,8 @@ public class PickUpTarget : MonoBehaviour
         {
             if(item.gameObject.GetComponent<PickUpObject>().isSolved == true)
             {
-                targetIndicator.SetActive(false); 
+                if(targetIndicator != null) 
+                    targetIndicator.SetActive(false); 
             }
         }
     }

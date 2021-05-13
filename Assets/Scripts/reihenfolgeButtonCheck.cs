@@ -6,8 +6,10 @@ public class reihenfolgeButtonCheck : MonoBehaviour
 {
     public OneWayButtonTrigger[] buttons = new OneWayButtonTrigger[2]; 
 
-    private bool buttonOnePressed; 
-    private bool buttonTwoPressed; 
+    public bool buttonOnePressed; 
+    public bool buttonTwoPressed; 
+
+    public bool isSolved; 
 
 
     void Start()
@@ -17,33 +19,49 @@ public class reihenfolgeButtonCheck : MonoBehaviour
 
     void Update()
     {
-        //Check for Button One
-        if(buttons[0].currentlyActivated == true)
-        {
+        //IS button 0 active or not
+        if(buttons[0].currentlyActivated)
             buttonOnePressed = true; 
-        }
-        else if(buttons[0].currentlyActivated == false)
-        {
+        else
             buttonOnePressed = false; 
+
+        if(buttonOnePressed)
+        {
+            // if 0 is active look if 1 is active
+            if(buttons[1].currentlyActivated)
+            {
+                //time since 0 button is pressed has to be larger then time since 1 button was pressed
+                if(buttons[0].timeSincePressed > buttons[1].timeSincePressed )
+                {
+                    buttonTwoPressed = true; 
+                }
+                else    
+                    buttonTwoPressed = false; 
+            }
+            else
+                buttonTwoPressed = false; 
         }
 
-        //Check for Button Two
-        if(buttons[1].currentlyActivated == true && buttonOnePressed == true)
-        {
-            buttonTwoPressed = true; 
-        }
-        else if(buttons[1].currentlyActivated == false)
-        {
-            buttonTwoPressed = false; 
-        }
 
-        //CheckForButtonThree
-        if(buttons[2].currentlyActivated == true && buttonOnePressed == true && buttonTwoPressed == true)
+        //Check if both are pressed
+        if(buttonOnePressed && buttonTwoPressed)
         {
-            Debug.Log("CorrectOrder"); 
-        }
-
+            //is button 2 active
+            if(buttons[2].currentlyActivated)
+            {
+                //time since 1 button is pressed has to be larger then time since 2 button was pressed
+                if(buttons[1].timeSincePressed > buttons[2].timeSincePressed )
+                {
+                    //puzzle solved
+                    isSolved = true; 
+                }
+                
+            }
+        }   
     }
+        
+
+    
 
 
 

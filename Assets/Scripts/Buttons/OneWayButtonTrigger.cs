@@ -26,6 +26,8 @@ public class OneWayButtonTrigger : MonoBehaviour
     public float timeBeforeInactive;
     private float currentTime; 
 
+    public float timeSincePressed; 
+
     [Header("Level04")]
     public GameObject turnObject ;
     public int turnAmount;
@@ -47,6 +49,8 @@ public class OneWayButtonTrigger : MonoBehaviour
     
     void Update()    
     {
+        timeSincePressed += Time.time; 
+
         //Timer; Disabled on 0
         if(currentTime > 0)
             currentTime -= Time.deltaTime; 
@@ -71,7 +75,7 @@ public class OneWayButtonTrigger : MonoBehaviour
     private void OnMouseDown()
     {
         //Sets own Animator and currentlyActivated
-        
+        timeSincePressed = 0; 
         currentlyActivated = true; 
         currentTime = timeBeforeInactive; 
 
@@ -159,7 +163,7 @@ public class OneWayButtonTrigger : MonoBehaviour
        
     private IEnumerator Countdown()
     {
-        Debug.Log("countdown"); 
+        //Debug.Log("countdown"); 
         
         yield return new WaitForSeconds(1); 
 
