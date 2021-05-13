@@ -41,19 +41,26 @@ public class ButtonTrigger : MonoBehaviour
 
     
     private void OnMouseDown()
-    {
+    {   
+        if(CompareTag("RohrLv4"))
+        {
+            otherAnimators[0].SetTrigger("deactivate"); 
+
+            return; 
+        }
         //Sets own Animator and currentlyActivated
         if (currentlyActivated == false)
             {
                 currentlyActivated = true; 
-
-                ownAnimator.SetTrigger("activate");
+                
+                if(ownAnimator != null)
+                    ownAnimator.SetTrigger("activate");
             }
             else
             {
                 currentlyActivated = false; 
-
-                ownAnimator.SetTrigger("deactivate");
+                if(ownAnimator != null)
+                    ownAnimator.SetTrigger("deactivate");
             } 
 
 

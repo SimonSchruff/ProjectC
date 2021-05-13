@@ -28,6 +28,9 @@ public class OneWayButtonTrigger : MonoBehaviour
 
     public float timeSincePressed; 
 
+    [Header("Level02")]
+    public GameObject lamp; 
+
     [Header("Level04")]
     public GameObject turnObject ;
     public int turnAmount;
@@ -94,6 +97,7 @@ public class OneWayButtonTrigger : MonoBehaviour
         {
             Level02Zahnrad(); 
         }
+
             
            
         SetExternalAnimators(); 
@@ -159,6 +163,8 @@ public class OneWayButtonTrigger : MonoBehaviour
         {
             a.SetTrigger("activate"); 
         }
+
+        lamp.SetActive(true); 
     }
        
     private IEnumerator Countdown()
