@@ -7,6 +7,7 @@ public class PickUpObject : MonoBehaviour
     [Header("Public Bools")]
     public bool currentlySelected;
     public bool inTargetArea; 
+    public bool isSolved; 
 
     //Mouse pos calculations
     private Vector3 mouseOffset;
@@ -18,6 +19,8 @@ public class PickUpObject : MonoBehaviour
     public Transform targetPos; 
 
 
+    [Header("External References")]
+    public GameObject[] gameObjects;
     public Animator animator; 
 
 
@@ -58,10 +61,26 @@ public class PickUpObject : MonoBehaviour
         }
         else
         {
+            //Pick UP object has reaches target
+            isSolved = true; 
+
             transform.position = targetPos.position; 
 
             if(animator != null)
                 animator.SetTrigger("activate"); 
+
+
+            foreach(GameObject go in gameObjects)
+            {
+                if(go.activeInHierarchy == false)
+                {
+                    go.SetActive(true);  
+                }
+                else
+                {
+                    go.SetActive(false); 
+                }
+            }  
         }
         
     }
