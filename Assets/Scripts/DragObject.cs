@@ -7,17 +7,28 @@ public class DragObject : MonoBehaviour
     public int targetPumpValue; 
     public int currentPumpValue; 
 
-    public bool reachedTop; 
+    private bool reachedTop; 
 
+    public int topBounds; 
+
+
+    [Header("Object Refs")]
     public GameObject parentObject;
-    private float mouseZCoord;
+    public Animator harmonika; 
+
+    public Animator zeiger; 
+
+    public GameObject lampe; 
+    
     
 
     [Header("Bounds")]
     Vector3 originalPos;
 
     [Tooltip("Max/Min Bounds according to resulting movementVector.y of mouse position")]
-    public Vector3 movementVector;
+    private Vector3 movementVector;
+
+    private float mouseZCoord;
 
     public float maxBounds;
     public float minBounds; 
@@ -34,6 +45,9 @@ public class DragObject : MonoBehaviour
         reachedTop = false; 
         cubeRotation = FindObjectOfType<CubeRotation>(); 
     }
+
+   
+  
 
 
     public void OnMouseDown()
@@ -73,6 +87,8 @@ public class DragObject : MonoBehaviour
 
         //Counts pumps
         CountPumps(); 
+
+        harmonika.SetInteger("active",currentPumpValue); 
        
         //Clamp Y MovementVector to max/min Bounds; 
         Vector3 moveVectorClamped = new Vector3(GetMovementVector().x,Mathf.Clamp(GetMovementVector().y,originalPos.y - minBounds, originalPos.y + maxBounds),GetMovementVector().z);  
@@ -85,18 +101,21 @@ public class DragObject : MonoBehaviour
         //if bot reached; count++
         //Until top is reached not possible to count 
 
-        if(parentObject.transform.position.y < -28 && reachedTop == true)
+        
+
+        if(parentObject.transform.position.y < -35 && reachedTop == true)
         {
             currentPumpValue++;
             reachedTop = false;  
         }
-        else if(parentObject.transform.position.y > -26)
+        else if(parentObject.transform.position.y > -35)
         {
             reachedTop = true; 
         }
         else if(currentPumpValue >= targetPumpValue)
         {
-            Debug.Log("TargetPumpValue Reached"); 
+            zeiger.SetTrigger("full"); 
+            lampe.SetActive(true); 
         }
     }
 
@@ -104,6 +123,8 @@ public class DragObject : MonoBehaviour
     {
         cubeRotation.isDisabled = false;
         currentPumpValue = 0; 
+
+        harmonika.SetInteger("active",currentPumpValue); 
          
         parentObject.transform.position = originalPos; 
     }
