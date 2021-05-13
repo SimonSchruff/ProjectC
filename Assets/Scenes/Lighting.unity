@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4.578167, g: 4.5941963, b: 6.9770966, a: 1}
+  m_IndirectSpecularColor: {r: 3.9518182, g: 3.9604537, b: 6.006001, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2302,7 +2302,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5972191728477514568, guid: 5f419e5d78c9cb0488870abc1fbdad8d, type: 3}
+  - {fileID: 2100000, guid: b963ec366d283ee43bca61b1ace93a62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3729,7 +3729,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5972191728477514568, guid: 5f419e5d78c9cb0488870abc1fbdad8d, type: 3}
+  - {fileID: 2100000, guid: b963ec366d283ee43bca61b1ace93a62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8201,24 +8201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: -1372625422
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    m_Bits: 2048
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: df975f6c4479f446787ab3d7bc4ecb69, type: 2}
-  m_LastPosition: {x: 82.21751, y: 43.449112, z: -28.898335}
-  m_LastRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
 --- !u!1 &677960434
 GameObject:
   m_ObjectHideFlags: 0
@@ -26209,11 +26191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 971970224058328684, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
-  - {fileID: 5561349426305759274, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
-  - {fileID: 4750025783564385122, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
-  - {fileID: 2770359204999231786, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
-  - {fileID: -3941583355024626588, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
+  - {fileID: 2100000, guid: 99849079618cf458ea737806e6559aa7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26828,11 +26806,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 971970224058328684, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
-  - {fileID: 5561349426305759274, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
-  - {fileID: 4750025783564385122, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
-  - {fileID: 2770359204999231786, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
-  - {fileID: -3941583355024626588, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
+  - {fileID: 2100000, guid: 352012070981e455ab7b646f418bc1c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28764,7 +28738,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147928147608}
-  m_Mesh: {fileID: 6123728729792255881, guid: 4175c26ad2e9744089e7370cf7c2e334, type: 3}
+  m_Mesh: {fileID: 6123728729792255881, guid: 5697c2350c9c84e1caa18b4ff5645180, type: 3}
 --- !u!33 &3469287837771136463
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28844,7 +28818,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148341178306}
-  m_Mesh: {fileID: -49101774561661567, guid: 194092c81de674cbdb0cdaabd82aa9b1, type: 3}
+  m_Mesh: {fileID: -49101774561661567, guid: 31d7289c727e54aec8fd5807563d23cb, type: 3}
 --- !u!33 &3469287838436081412
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31617,10 +31591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &6985465518744328615
 GameObject:
   m_ObjectHideFlags: 0
