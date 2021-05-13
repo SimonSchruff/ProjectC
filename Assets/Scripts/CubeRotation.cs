@@ -6,6 +6,8 @@ public class CubeRotation : MonoBehaviour
 {
     public static CubeRotation instance; 
 
+    public Transform rotPivot; 
+
     public bool isDisabled = false; 
 
     [Header("Rotation Speed")]
@@ -65,13 +67,14 @@ public class CubeRotation : MonoBehaviour
         if(mouseDeltaX > mouseDeltaY)
         {
             rotX = Input.GetAxis("Mouse X") * rotationSpeedX;
-            transform.Rotate(0,-rotX,0,Space.World);
+            transform.RotateAround(rotPivot.transform.position, Vector3.up, -rotX); 
+
+            //transform.Rotate(0,-rotX,0,Space.World);
         }
         else 
         {
             rotY = Input.GetAxis("Mouse Y") * rotationSpeedY;
-            transform.Rotate(rotY,0,0,Space.World);
-
+            transform.RotateAround(rotPivot.transform.position, Vector3.right, rotY); 
         }
 
         
