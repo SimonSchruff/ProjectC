@@ -21,6 +21,10 @@ public class ButtonTrigger : MonoBehaviour
     public Collider[] colliders; 
     
 
+    [Header("GameObjects")]
+    public GameObject[] gameObjects; 
+    
+
     [Header("Currently Activated")]
     public bool currentlyActivated = false;
 
@@ -81,7 +85,20 @@ public class ButtonTrigger : MonoBehaviour
             {
                 c.enabled = false; 
             }
-        }    
+        }   
+
+
+        foreach(GameObject go in gameObjects)
+        {
+            if(go.activeInHierarchy == false)
+            {
+                go.SetActive(true);  
+            }
+            else
+            {
+                go.SetActive(false); 
+            }
+        }     
        
     }
 
