@@ -12,7 +12,7 @@ public class WoodPlateDrag : MonoBehaviour
     private Vector3 originalPos;
 
 
-    private Vector3 movementVector;
+    public Vector3 movementVector;
 
     public float maxBounds;
     public float minBounds; 
@@ -34,6 +34,8 @@ public class WoodPlateDrag : MonoBehaviour
 
         //saves original pos of gameObject parent for movement Vector on mouse click; 
         originalPos = transform.position;
+
+        Debug.Log("Clicked"); 
 
     }
 

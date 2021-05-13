@@ -75,6 +75,10 @@ public class OneWayButtonTrigger : MonoBehaviour
         {
             Level04Zahnrad(); 
         }
+        else if(CompareTag("ButtonLv2"))
+        {
+            Level02Zahnrad(); 
+        }
             
            
         SetExternalAnimators(); 
@@ -125,6 +129,15 @@ public class OneWayButtonTrigger : MonoBehaviour
     {
         turnObject.transform.Rotate(new Vector3(0,turnAmount,0), Space.Self); 
     }
+
+    void Level02Zahnrad()
+    {
+        foreach(Animator a in otherAnimators)
+        {
+            a.SetTrigger("activate"); 
+        }
+    }
+       
 
     
 
