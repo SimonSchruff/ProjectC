@@ -19,31 +19,31 @@ MonoBehaviour:
     m_Value: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.30212003, g: 0.30576, b: 0.455, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   center:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.384
     min: 0
     max: 1
   smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.401
     min: 0.01
     max: 1
   roundness:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 1
   rounded:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   mask:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 5.96
+    m_Value: 4.33
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -299,25 +299,25 @@ MonoBehaviour:
     m_Value: 0
   top:
     m_OverrideState: 1
-    m_Value: {r: 0.07956332, g: 0.078431375, b: 0.13333334, a: 1}
+    m_Value: {r: 0.0065859687, g: 0.0065859687, b: 0.03773582, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0.13105199, g: 0.13105199, b: 0.1792453, a: 1}
+    m_Value: {r: 0.31826273, g: 0.31826273, b: 0.4528302, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   bottom:
     m_OverrideState: 1
-    m_Value: {r: 0.01223745, g: 0.014619424, b: 0.047169805, a: 1}
+    m_Value: {r: 0.006512091, g: 0.0060488326, b: 0.03433981, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   gradientDiffusion:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.9
 --- !u!114 &-254344471924646513
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   screenFadeDistance:
     m_OverrideState: 1
-    m_Value: 0.003
+    m_Value: 0.218
     min: 0.001
     max: 1
 --- !u!114 &11400000
@@ -482,7 +482,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   colorMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   color:
     m_OverrideState: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
     showAlpha: 0
     showEyeDropper: 1
   tint:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 1
     showAlpha: 0
@@ -515,10 +515,10 @@ MonoBehaviour:
     min: 0
   baseHeight:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -4.44
   maximumHeight:
     m_OverrideState: 0
-    m_Value: 10
+    m_Value: 23.18
   meanFreePath:
     m_OverrideState: 0
     m_Value: 2000
@@ -763,7 +763,7 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.259
     min: 0
     max: 1
   scatter:
